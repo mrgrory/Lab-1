@@ -16,7 +16,7 @@ public class Main {
         Product p2=new Product("Microwave",ProductCategory.ELECTRONICS,999.99);
         Product p3=new Product("bed",ProductCategory.HOME,100.10);
         Product p4=new Product("Hrechka",ProductCategory.OTHER,67.0);
-        System.out.println(p+" "+p1+" "+p2+" "+p3);
+        System.out.println(p+" "+p1+" "+p2+" "+p3+"\n");
 
         List<Product> products1=new ArrayList<>();
         products1.add(p);
@@ -86,7 +86,7 @@ public class Main {
 
         System.out.println("\nRemoving order");
         program.removeOrder(o1.getId());
-        System.out.println(program.findOrderById(o1.getId()) + "null means order was not found");
+        System.out.println(program.findOrderById(o1.getId()) + "null means order was not found\n");
 
         try {
             Customer testExc=new Customer("","test@exc");
