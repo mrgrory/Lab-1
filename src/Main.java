@@ -87,5 +87,17 @@ public class Main {
         System.out.println("\nRemoving order");
         program.removeOrder(o1.getId());
         System.out.println(program.findOrderById(o1.getId()) + "null means order was not found");
+
+        try {
+            Customer testExc=new Customer("","test@exc");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Test exception: "+ e);
+        }
+
+        try {
+            Product testNeg=new Product("test",ProductCategory.HOME,-55);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Test exception: "+ e);
+        }
     }
 }

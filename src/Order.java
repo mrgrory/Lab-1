@@ -12,8 +12,8 @@ public class Order{
         if (customer==null) {
             throw new IllegalArgumentException("customer can not be null");
         }
-        if (products==null) {
-            throw new IllegalArgumentException("products can not be null");
+        if (products==null || products.isEmpty()) {
+            throw new IllegalArgumentException("products can not be null or empty");
         }
         if (status==null) {
             throw new IllegalArgumentException("status can not be null");
@@ -61,27 +61,4 @@ public class Order{
                 '}';
     }
 
-    public void setCustomer(Customer customer) {
-        if (customer==null) {
-            throw new IllegalArgumentException("customer can not be null");
-        }
-        this.customer = customer;
-    }
-
-    public void setProducts(List<Product> products) {
-        if (products==null) {
-            throw new IllegalArgumentException("products can not be null");
-        }
-        this.products = products;
-        for(Product product:this.getProducts()) {
-            totalPrice+=product.getPrice();
-        }
-    }
-
-    public void setStatus(OrderStatus status) {
-        if (status==null) {
-            throw new IllegalArgumentException("status can not be null");
-        }
-        this.status = status;
-    }
 }
